@@ -1,3 +1,13 @@
+/**
+ * Author: Victor Lamarca
+ * Date: 2015-02-23
+ * License: x
+ * Source: x
+ * Description: Dinic
+ * Time: O(X)
+ * Status: Tested
+ */
+#pragma once
 const int MAXV = 3e3+10; // maximo numero de vertices
 const int FINF = INT_MAX; // infinite flow
 

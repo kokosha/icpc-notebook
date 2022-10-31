@@ -1,3 +1,13 @@
+/**
+ * Author: Victor Lamarca
+ * Date: 2015-02-23
+ * License: x
+ * Source: x
+ * Description: HLD
+ * Time: O(X)
+ * Status: Tested
+ */
+#pragma once
 template<int N, bool IN_EDGES> struct HLD {
     int t;
     vector<int> *g;

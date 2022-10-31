@@ -1,3 +1,13 @@
+/**
+ * Author: Victor Lamarca
+ * Date: 2015-02-23
+ * License: x
+ * Source: x
+ * Description: Euler Cycle
+ * Time: O(X)
+ * Status: Tested
+ */
+#pragma once
 vector<pair<int,int>> g[N];
 namespace eulerpath_space{
 vector<int> path;

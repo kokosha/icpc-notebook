@@ -1,3 +1,13 @@
+/**
+ * Author: Victor Lamarca
+ * Date: 2015-02-23
+ * License: x
+ * Source: x
+ * Description: MinCostMaxFlow
+ * Time: O(X)
+ * Status: Tested
+ */
+#pragma once
 const int maxN = 310;
 const double eps = 1e-6;
 #define mset(v,x) memset(v,x,sizeof(v))
