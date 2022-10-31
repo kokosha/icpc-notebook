@@ -13,7 +13,7 @@ const int N = 5e5+10;
 vector<int> g[N];
 vector<int> comp_to_nos[N];
 int tempo;
-int disc[N]; //primeiro tempo em que nó foi descoberto
+int disc[N]; //primeiro tempo em que noh foi descoberto
 int low[N]; //minimo entre disc[no] e low[v] dos vizinhos
 
 //stack e size of stack
@@ -39,9 +39,9 @@ int dfs(int no){
 }
 
 /*
-    Poe condição (u or v) no 2sat
-    se du==1, u é 2*u+1 (impar) e significa
-    que é u normal (verdadeiro), do contrario é not u
+    Poe condicao (u or v) no 2sat
+    se du==1, u eh 2*u+1 (impar) e significa
+    que eh u normal (verdadeiro), do contrario eh not u
 */
 void poe(int u, int v, int du, int dv){
     u = 2*u+du;

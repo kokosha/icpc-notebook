@@ -30,7 +30,7 @@ template<typename T> struct costFlow {
     edges.clear(); mset(h, -1);
   }
  
-    //r é o flow e w o custo
+    //r eh o flow e w o custo
   void addE(int u, int v, int r, T w) {
       u++,v++;
     edges.push_back(edge_t(v, r, w, h[u]));
