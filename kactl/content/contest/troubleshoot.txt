@@ -1,3 +1,39 @@
+VLAMARCA Misc:
+Large primes
+	cabe int
+	1.5e9+1
+	1163926061
+	long long
+	1e15+37
+
+Script run_mult
+#Script chamado ri:
+------------------------------
+echo $RANDOM > auxin 
+./cr A.cpp < auxin
+while true;
+do
+	echo $RANDOM > auxin
+	./a.out < auxin
+done
+------------------------------
+
+#O script acima deve ser usado para rodar um programas varias vezes para achar algum erro. Usar da seguinte forma:
+		-PRINTAR SEED NO PROGRAMA EM Q SE BUSCA ERRO (SEED É RECEBIDA PELA VARIÁVEL BASH $RANOM)
+		-CRIAR GERADOR DE INPUT NO PROPRIO PROGRAMA A PARTIR DA SEED
+		-FAZER CHECKER, SE DER RUIM, GERAR LOOP INFINITO
+		-USAR O SIMPLES SCRIPT ACIMA DE RODAR PROGRAMA VÁRIAS VEZES
+		
+	SE DER RUIM, ULTIMA SEED PRINTADA CAUSA O ERRO
+
+Random:
+//mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());	
+mt19937 rng(time(0));
+int seed = uniform_int_distribution(0, INT_MAX)(rng);
+int x = rng()%n;
+shuffle(all(v),rng);
+
+
 Pre-submit:
 Write a few simple test cases if sample is not enough.
 Are time limits close? If so, generate max cases.
