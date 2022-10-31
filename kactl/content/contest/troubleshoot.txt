@@ -1,4 +1,9 @@
 VLAMARCA Misc:
+cr
+g++ -std=c++20 -Wshadow -fsanitize=address -D_GLIBCXX_DEBUG -W -Wall -Wextra $1 && ./a.out
+crf
+g++ -std=c++20 -O2 -w $1 && ./a.out
+
 Large primes
 	cabe int
 	1.5e9+1
