@@ -29,7 +29,6 @@ struct Treap { // implicit key (key = index)
 inline int size(Treap* t) {
     return (t ? t->size : 0);
 }
-// Notice that left, right may be NULL
 // flag t->inc is set,
 // => the subtree of t (t not included) is not up-to-date
 // flag t->rev is set,
@@ -47,7 +46,6 @@ inline void push(Treap* t) {
         }
         t->rev = false;
     }
-
     if (t->inc) {
         if (t->left) {
             t->left->val += t->inc;

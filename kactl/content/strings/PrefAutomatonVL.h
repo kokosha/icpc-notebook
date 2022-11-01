@@ -19,10 +19,8 @@
         prox['a'][4] = 4 (continuo na string completa)
 */
 int prox[26][N];
-
 vector<int> fpref(string &s){
     vector<int> pref(s.size());
-    
     for(int i = 1; i<sz(s); i++){
         int t = pref[i-1];
         while(t and s[i]!=s[t]) t = pref[t-1];
@@ -31,7 +29,6 @@ vector<int> fpref(string &s){
     }
     return pref;
 }
-
 void build_aut(string &s){
     vector<int> pref = fpref(s);
     int n = sz(s);

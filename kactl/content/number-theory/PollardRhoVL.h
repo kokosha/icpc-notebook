@@ -26,7 +26,6 @@ ll exp_mod(ll a, ll x, ll m) {
     if(x % 2 == 1) res = mulmod(res, a, m); // (res * a) % m
     return res;
 }
-
 //Rabin Miller
 bool ispp(ll n){
     if(n<=1) return 0;
@@ -50,7 +49,6 @@ bool ispp(ll n){
     }
     return 1;
 }
-
 ll rho(ll n){
     ll d, c = grand(n), x = grand(n),xx=x;
     if(n%2==0){
@@ -64,7 +62,6 @@ ll rho(ll n){
     } while(d==1);
     return d;
 }
-
 //mapa de primo para frequencia
 map<ll,int> F;
 void factor(ll n){

@@ -19,14 +19,12 @@
 */
 #define f first
 #define s second
-
 namespace beats {
 	struct node {
 		int tam;
 		ll sum, lazy; // lazy pra soma
 		ll mi1, mi2, mi; // mi = #mi1
 		ll ma1, ma2, ma; // ma = #ma1
-
 		node(ll x = 0) {
 			sum = mi1 = ma1 = x;
 			mi2 = LINF, ma2 = -LINF;
@@ -77,10 +75,8 @@ namespace beats {
 			lazy += x;
 		}
 	};
-
 	node seg[4*MAX];
 	int n, *v;
-
 	node build(int p=1, int l=0, int r=n-1) {
 		if (l == r) return seg[p] = {v[l]};
 		int m = (l+r)/2;

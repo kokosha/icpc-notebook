@@ -7,7 +7,6 @@
  * Time: O(X)
  * Status: Tested
  */
-
 #pragma once
 const int mod = 1e9+7;
 ll mul(ll x, ll y, ll modc){ return (__int128) x * y % modc; }
@@ -20,7 +19,6 @@ ll ipow(ll x, ll y, ll p = mod){
  }
  return ret;
 }
-
 vector<int> berlekamp_massey(vector<int> x){
  vector<int> ls, cur;
  int lf, ld;
@@ -52,7 +50,6 @@ vector<int> berlekamp_massey(vector<int> x){
  for(auto &i : cur) i = (i % mod + mod) % mod;
  return cur;
 }
-
 int get_nth(vector<int> rec, vector<int> dp, ll n){
  int m = sz(rec);
  vector<int> s(m), t(m);
@@ -85,7 +82,6 @@ int get_nth(vector<int> rec, vector<int> dp, ll n){
  fr(i,m) ret += 1ll * s[i] * dp[i] % mod;
  return ret % mod;
 }
-
 vector<int> coef; //imprimir vetor coef na main
 int guess_nth_term(vector<int> x, ll n){
  if(n < sz(x)) return x[n];
@@ -93,7 +89,6 @@ int guess_nth_term(vector<int> x, ll n){
  if(coef.empty()) return 0;
  return get_nth(coef, x, n);
 }
-
 int main() {
     //f(n) = coef[0]*f(n-1) + coef[1]*f(n-2) + ...
     vector<int> va = {1,1,2,3,5,8};

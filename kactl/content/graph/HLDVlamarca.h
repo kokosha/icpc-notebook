@@ -54,5 +54,4 @@ template<int N, bool IN_EDGES> struct HLD {
         return res;
     }
 };
-
 // HLD<N,false> hld;

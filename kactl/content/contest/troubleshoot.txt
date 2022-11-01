@@ -3,14 +3,12 @@ cr
 g++ -std=c++20 -Wshadow -fsanitize=address -D_GLIBCXX_DEBUG -W -Wall -Wextra $1 && ./a.out
 crf
 g++ -std=c++20 -O2 -w $1 && ./a.out
-
 Large primes
 	cabe int
 	1.5e9+1
 	1163926061
 	long long
 	1e15+37
-
 Script run_mult
 #Script chamado ri:
 ------------------------------
@@ -21,16 +19,13 @@ do
 	echo $RANDOM > auxin
 	./a.out < auxin
 done
-------------------------------
-
+-----------------------------
 #O script acima deve ser usado para rodar um programas varias vezes para achar algum erro. Usar da seguinte forma:
 		-PRINTAR SEED NO PROGRAMA EM Q SE BUSCA ERRO (SEED E RECEBIDA PELA VARIAVEL BASH $RANDOM)
 		-CRIAR GERADOR DE INPUT NO PROPRIO PROGRAMA A PARTIR DA SEED
 		-FAZER CHECKER, SE DER RUIM, GERAR LOOP INFINITO
 		-USAR O SIMPLES SCRIPT ACIMA DE RODAR PROGRAMA VARIAS VEZES
-		
 	SE DER RUIM, ULTIMA SEED PRINTADA CAUSA O ERRO
-
 Random:
 //mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());	
 mt19937 rng(time(0));

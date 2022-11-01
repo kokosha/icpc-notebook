@@ -49,17 +49,13 @@ vector<int> make_suf(string s){
         c = cn;
     }
     p.erase(p.begin());
-    
     return p;
 }
-
 //vector<int> make_lcp(vector<int> &s, vector<int> &p){
 vector<int> make_lcp(string &s, vector<int> &p){
     int n = sz(s);
     vector<int> rank(n), lcp(n-1);
-    
     fr(i,n) rank[p[i]] = i;
-    
     int k = 0;
     fr(i,n){
         if(rank[i]==n-1){

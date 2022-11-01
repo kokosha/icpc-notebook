@@ -14,13 +14,11 @@ struct node{
 node oper(node a, node b){
     return node{a.val+b.val};
 }
-
 struct Seg{
 node nulo(){
     return node{0};
 }
 //---------MUDAR ACIMA DISSO GERALMNT--------
-    
 int n;
 vector<node> s;
 Seg(){}
@@ -29,14 +27,12 @@ void build(){
         s[i] = oper(s[i<<1],s[i<<1|1]);
     }
 }
-    
 Seg(int _n){
     n = _n;
     s = vector<node>(2*n);
     for(int i = n; i<2*n; i++) s[i] = nulo();
     build();
 }
-    
 Seg(vector<ll> v){
     n = sz(v);
     s = vector<node>(2*n);
@@ -53,7 +49,7 @@ void upd(int pos, node val){
     //for(s[pos+=n]=val;pos>1;pos>>=1)
     //    s[pos>>1] = oper(s[pos],s[pos^1]);
 }
-//array é abstraido para 0-indexed (nas folhas da seg) e [l,r)
+//array eh abstraido para 0-indexed (nas folhas da seg) e [l,r)
 node qry(int l, int r){
     node ans = nulo();
     for(l+=n,r+=n;l<r;l>>=1,r>>=1){

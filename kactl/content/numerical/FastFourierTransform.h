@@ -18,10 +18,8 @@
  * here (https://github.com/simonlindholm/fft-precision/blob/master/fft-precision.md)
  */
 const double PI=acos(-1.0);
-namespace fft
-{
-    struct num
-    {
+namespace fft {
+    struct num {
         double x,y;
         num() {x = y = 0;}
         num(double x,double y): x(x), y(y){}
@@ -30,12 +28,10 @@ namespace fft
     inline num operator-(num a, num b) {return num(a.x - b.x, a.y - b.y);}
     inline num operator*(num a, num b) {return num(a.x * b.x - a.y * b.y, a.x * b.y + a.y * b.x);}
     inline num conj(num a) {return num(a.x, -a.y);}
-
     int base=1;
     vector<num> roots={{0,0}, {1,0}};
     vector<int> rev={0, 1};
     const double PI=acosl(-1.0);
-
     // always try to increase the base
     void ensure_base(int nbase) {
         if(nbase <= base) return;
@@ -53,7 +49,6 @@ namespace fft
             base++;
         }
     }
-
     void fft(vector<num> &a,int n=-1) {
         if(n==-1) n=a.size();
         assert((n&(n-1)) == 0);
@@ -75,16 +70,13 @@ namespace fft
             }
         }
     }
-
     vector<num> fa, fb;
     // multiply with less fft by using complex numbers.
     vector<int> multiply(vector<int> &a, vector<int> &b) {
         int need = a.size() + b.size() - 1;
-
         int nbase = 0;
         while((1 << nbase) < need) nbase++;
         ensure_base(nbase);
-
         int sz = 1 << nbase;
         if(sz > (int)fa.size()) fa.resize(sz);
         for(int i = 0; i < sz; i++) {
@@ -92,7 +84,6 @@ namespace fft
             int y = (i < (int)b.size() ? b[i] : 0);
             fa[i] = num(x, y);
         }
-
         fft(fa, sz);
         num r(0,-0.25/sz);
         for(int i = 0; i <= (sz>>1); i++) {
@@ -101,14 +92,11 @@ namespace fft
             if(i != j) fa[j] = (fa[i] * fa[i] - conj(fa[j] * fa[j])) * r;
             fa[i] = z;
         }
-
         fft(fa, sz);
         vector<int> res(need);
         for(int i = 0; i < need; i++) res[i] = fa[i].x + 0.5;
         return res;
     }
-
-    // using the technique of dividing in sqrt to use less fft.
     vector<int> multiply_mod(vector<int> &a, vector<int> &b, int m, int eq=0) {
         int need = a.size() + b.size() - 1;
         int nbase = 0;

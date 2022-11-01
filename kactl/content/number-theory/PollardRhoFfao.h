@@ -25,7 +25,6 @@ ull gcd(ull u, ull v) {
     } while (v);
     return u << shift;
 }
-
 ull modmul(ull a, ull b, ull M) {
     ll ret = a * b - M * ull(1.L / M * a * b);
     return ret + M * (ret < 0) - M * (ret >= (ll)M);
@@ -36,7 +35,6 @@ ull modpow(ull b, ull e, ull mod) {
         if (e & 1) ans = modmul(ans, b, mod);
     return ans;
 }
- 
 bool isPrime(ull n) {
     if (n < 2 || n % 6 % 4 != 1) return (n | 1) == 3;
     ull A[] = {2, 325, 9375, 28178, 450775, 9780504, 1795265022},
@@ -49,9 +47,7 @@ bool isPrime(ull n) {
     }
     return 1;
 }
-    
 typedef __uint128_t u128;
-    
 ull hi(u128 x) { return (x >> 64); }
 ull lo(u128 x) { return (x << 64) >> 64; }
 struct Mont {
@@ -71,7 +67,6 @@ struct Mont {
     ull mul(ull a, ull b) const { return reduce(u128(a) * b); }
     ull mod, inv, r2;
 };
-    
 ull pollard(ull n) {
     if (n == 9)
         return 3;
@@ -93,7 +88,6 @@ ull pollard(ull n) {
     }
     return gcd(prd, n);
 }
-
 //Numeros fatorados neste map (primo -> frequencia)
 unordered_map<ll, int> mp_fac;
 void factor(ull n) {

@@ -8,7 +8,6 @@
  * Status: Tested
  */
 #pragma once
-
 //LEMBRAR DE POR O MAKE DEPOIS DE MONTAR A ARVORE
 const int N = 5e5+10;
 namespace lca_space{
@@ -17,7 +16,6 @@ int n;
 vector<int> *g;
 int pai[N], dist[N]; //pai do no i (raiz = -1)
 int st[N][25]; //sparse table - st[i][j] = pai 2^j niveis acima do no i
-
 void dfs(int no, int from, int dac){
     dist[no] = dac;
     for(auto it : g[no]){
@@ -26,7 +24,6 @@ void dfs(int no, int from, int dac){
         dfs(it,no,dac+1);
     }
 }
-
 void make(vector<int> _g[N], int _n, int root){
     g = _g;
     n = _n;
@@ -44,7 +41,6 @@ void make(vector<int> _g[N], int _n, int root){
         }
     }
 }
-
 int go_up(int no, int k){
     for(int i = nlog; i>=0; i--){
         if((1<<i)<=k and no!=-1){
@@ -55,7 +51,6 @@ int go_up(int no, int k){
     if(k==0) return no;
     return -1;
 }
-
 int lca(int p, int q){
     if(dist[p]<dist[q]) swap(p,q);
     p = go_up(p,dist[p]-dist[q]);
@@ -68,7 +63,6 @@ int lca(int p, int q){
     }
     return pai[q];
 }
-
 int get_dist(int u, int v){
     return dist[u]+dist[v]-2*dist[lca(u,v)];
 }
