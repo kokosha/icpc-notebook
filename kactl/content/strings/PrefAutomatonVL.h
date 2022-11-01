@@ -11,7 +11,7 @@
 /*
     Constroi automato de sufixo da string (usa kmp)
         Para string de tamanho n, ha n+1 estados (de [0,n])
-        estado 0 é nada da string e n é tudo da string (estou na ultima letra)
+        estado 0 eh nada da string e n eh tudo da string (estou na ultima letra)
         
     prox[c][i] = proximo estado dado que estou no estado i apos adicionar letra c
     

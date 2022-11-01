@@ -432,9 +432,9 @@ template<unsigned M> struct Poly : public vector<modnum<M>> {
     tested in: https://judge.yosupo.jp/submission/102130
  
     Poly herda de vector de modnum<P>, acessos sao (*this)[i]
-        Primo precisa ser fft friendly pra maioria das operacoes (mas posso usar 1 + 7·2^26 e 1 + 5·2^25 e CRT pra recuperar pra outros mods!)
+        Primo precisa ser fft friendly pra maioria das operacoes (mas posso usar 1 + 7*2^26 e 1 + 5*2^25 e CRT pra recuperar pra outros mods)
     Ordem do vetor sao os coeficientes do menos pro mais significativo
-        a[0]*x^0 + a[1]*x^1 + …
+        a[0]*x^0 + a[1]*x^1 + ... 
     .deg() do Poly eh o indice do ultimo valor nao nulo (maior expoente)
     .ord() eh o indice do primeiro coef nao nulo
     tds functions a seguir retornam um Poly:

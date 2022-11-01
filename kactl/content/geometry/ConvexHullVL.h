@@ -17,7 +17,7 @@ bool operator ==(const pt &p1, const pt &p2){
 }
 /*
     gera convex hull em ordem ccw
-    pontos colineares são retirados
+    pontos colineares sao retirados
     no fr(cor,2) porimeiro se faz o lower hull
     depois o upper
     

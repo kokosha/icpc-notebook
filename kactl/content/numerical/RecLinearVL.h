@@ -9,7 +9,7 @@
  */
 #pragma once
 /*
-    multipllica matriz - VALORES EM MÓDULO
+    multipllica matriz - VALORES EM MODULO
     para matriz n x n complexidade n^3
 */
 vector<vector<ll>> mm(vector<vector<ll>> a, vector<vector<ll>> b){

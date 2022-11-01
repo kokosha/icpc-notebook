@@ -10,13 +10,13 @@
 #pragma once
 /*
     retorno:
-        0 - sem solução
-        1 - uma solução
-        2 - infinitas soluções
+        0 - sem solucao
+        1 - uma solucao
+        2 - infinitas solucoes
         
-    resolve sistma - acha X para
+    resolve sistema - acha X para
         a*X = b
-    nos parametros da funcao, b é a ultima coluna da matriz a
+    nos parametros da funcao, b eh a ultima coluna da matriz a
 */
 int gauss (vector < vector<mb> > a, vector<mb> & ans) {
     int n = sz(a), m = sz(a[0])-1;

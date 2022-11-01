@@ -15,8 +15,8 @@ namespace lca_space{
 int nlog;
 int n;
 vector<int> *g;
-int pai[N], dist[N]; //pai do nó i (raiz = -1)
-int st[N][25]; //sparse table - st[i][j] = pai 2^j niveis acima do nó i
+int pai[N], dist[N]; //pai do no i (raiz = -1)
+int st[N][25]; //sparse table - st[i][j] = pai 2^j niveis acima do no i
 
 void dfs(int no, int from, int dac){
     dist[no] = dac;

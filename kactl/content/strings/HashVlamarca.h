@@ -33,10 +33,10 @@ void init_hash(int n){
 
 /*
     Calcula hash de intervalos da string
-        primeira letra é digito menos significativo
+        primeira letra eh digito menos significativo
         string de lowercase english letters
-        Base 27 é usada, cada letra é mapeada para [1,26], nao tem 0
-        Modulo é (1<<64) - unsigned long long
+        Base 27 eh usada, cada letra eh mapeada para [1,26], nao tem 0
+        Modulo eh (1<<64) - unsigned long long
 */
 struct meuhash{
     vector<ull> pref;

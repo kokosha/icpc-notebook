@@ -3,10 +3,11 @@
  * Date: 2015-02-23
  * License: x
  * Source: x
- * Description: berlekamp_massey
+ * Description: Berlekamp Massey
  * Time: O(X)
  * Status: Tested
  */
+
 #pragma once
 const int mod = 1e9+7;
 ll mul(ll x, ll y, ll modc){ return (__int128) x * y % modc; }
@@ -96,7 +97,7 @@ int guess_nth_term(vector<int> x, ll n){
 int main() {
     //f(n) = coef[0]*f(n-1) + coef[1]*f(n-2) + ...
     vector<int> va = {1,1,2,3,5,8};
-    //fibonacci - n é 0-indexado
+    //fibonacci - n eh 0-indexado
     for(int n = sz(va)-2; n<=sz(va)+5; n++){
         assert(n>=0);
         ll fib = guess_nth_term(va, n);
